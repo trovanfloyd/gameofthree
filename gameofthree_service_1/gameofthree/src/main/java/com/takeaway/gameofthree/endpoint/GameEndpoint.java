@@ -15,27 +15,32 @@ import org.springframework.web.bind.annotation.RestController;
 import com.takeaway.gameofthree.model.Player;
 import com.takeaway.gameofthree.service.GameService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 @RestController
+@Api(tags = {"gameofthree"})
 public class GameEndpoint {
 	
 	@Autowired
 	GameService gameService;
 
-	//start//optin generate number manual ou auto ? auto or ? manual&&number=10
 	@GetMapping("/start/{automaticoInput}")
-	public String startGame(@PathVariable boolean automaticoInput,
-							@RequestParam(value = "number") Optional<Integer> numberStart) {
+	@ApiOperation("Start the game")
+	public String startGame(@ApiParam("true (automatic) or false (manual)") @PathVariable boolean automaticoInput,
+			 @ApiParam("Number to start in case of manual type") @RequestParam(value = "number") Optional<Integer> numberStart) {
 		return gameService.prepareGame(automaticoInput, numberStart.orElse(null));
 	}
 	
-	//play
 	@PostMapping("/play")
+	@ApiOperation("Play the game")
 	public void play(@RequestBody Player player) {
 		gameService.play(player);
 	}
 	
-	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@ApiOperation("Health check")
 	@GetMapping("/health")
 	public ResponseEntity<String> health() {
 		return new ResponseEntity(HttpStatus.OK);

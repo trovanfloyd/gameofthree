@@ -11,7 +11,7 @@ public class Player implements Serializable {
 
 	private static final long serialVersionUID = 3126492436804902667L;
 
-	private Long id;
+	private Integer id;
 	
 	private Integer number;
 	
