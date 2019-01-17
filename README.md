@@ -20,7 +20,8 @@ mvn spring-boot:run
 
 After this go to URL Address or you can use any API Development Environment such as Postman and start the game:
 
-```example
+example:
+```
  http://localhost:8080/api/gameofthree/start/true
  ```
  > Ps: You can see more details in the API documentation
