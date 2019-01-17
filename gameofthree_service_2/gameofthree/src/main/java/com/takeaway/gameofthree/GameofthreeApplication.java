@@ -1,6 +1,7 @@
 package com.takeaway.gameofthree;
 
 import java.util.Collections;
+import java.util.Optional;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -46,6 +47,7 @@ public class GameofthreeApplication {
           .paths(Predicates.not(PathSelectors.regex("/error.*")))
           .build()
           .tags(new Tag("gameofthree", "Game of three service"))
+		  .genericModelSubstitutes(Optional.class)
           .apiInfo(apiInfo());                                           
     }
 	
