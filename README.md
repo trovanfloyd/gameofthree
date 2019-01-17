@@ -20,10 +20,10 @@ mvn spring-boot:run
 
 After this go to URL Address or you can use any API Development Environment such as Postman and start the game:
 
+Example for service one
 ```
  http://localhost:8080/api/gameofthree/start/true
  ```
- > Ps: Example for service one
  > Ps: You can see more details in the API documentation
 
 ### Documentation
@@ -33,12 +33,12 @@ Swagger 2 was chosen for the API documentation can be access by:
 ```url service one
 http://localhost:8080/api/gameofthree/swagger-ui.html
 ```
-> Ps: url service one
+> Ps: url for service one
 
 ```url service two
 http://localhost:9000/api/gameofthree/swagger-ui.htm
 ```
-> Ps: url service two
+> Ps: url for service two
 
 ### Project Instructions
 
