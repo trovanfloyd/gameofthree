@@ -53,7 +53,7 @@ public class GameService {
 			logger.info("The game has been started!");
 			return "The game has been started!";
 		} else {
-			logger.error("There is no second player active!");
+			
 			return "There is no second player active!";
 		}
 		
