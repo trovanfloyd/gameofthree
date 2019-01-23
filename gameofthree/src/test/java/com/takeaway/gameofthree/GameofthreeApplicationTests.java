@@ -39,7 +39,7 @@ public class GameofthreeApplicationTests {
 
 	@Test
 	public void testtStartGameUp() {
-		 if (gameService.discoverSecondPlayer()) {
+		 if (gameService.discoverSecondPlayer(false)) {
 			 try {
 					mockMvc.perform(MockMvcRequestBuilders.get("/start/true"))
 					        .andExpect(MockMvcResultMatchers.content().string("The game has been started!"))
@@ -52,7 +52,7 @@ public class GameofthreeApplicationTests {
 	
 	@Test
 	public void testStartGameDown() {
-		if (!gameService.discoverSecondPlayer()) {
+		if (!gameService.discoverSecondPlayer(false)) {
 			 try {
 					mockMvc.perform(MockMvcRequestBuilders.get("/start/true"))
 					        .andExpect(MockMvcResultMatchers.content().string("There is no second player active!")) 
@@ -83,7 +83,7 @@ public class GameofthreeApplicationTests {
 	public void testPlayGameWithSecondPlayerDown() {
 		
 		 try {
-			 if (!gameService.discoverSecondPlayer()) {
+			 if (!gameService.discoverSecondPlayer(false)) {
 				 
 				 String json = "{\n" +
 						 "  \"id\": 1,\n" +

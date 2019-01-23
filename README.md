@@ -11,16 +11,20 @@
 
 ### Build and run
 
-The easiest way to build and run the application is, with Maven installed and cofigured, go to the respective project directory using command prompt and type 
+The easiest way to build and run the application is, with Maven installed and cofigured, go to the target directory of the respective project using command prompt and type 
 the following command:
 
 ```shellscript
-mvn spring-boot:run
+java -jar gameofthree-0.0.1-SNAPSHOT.jar
 ```
+```shellscript
+java -jar gameofthree-0.0.1-SNAPSHOT.jar --spring.config.name=application_s2
+```
+> Ps: The first command is for service one and the second is for service two
 
 After this go to URL Address or you can use any API Development Environment such as Postman and start the game:
 
-Example for service one
+(Example for service one)
 ```
  http://localhost:8080/api/gameofthree/start/true
  ```
