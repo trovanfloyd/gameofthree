@@ -35,8 +35,8 @@ public class GameEndpoint {
 	
 	@PostMapping("/play")
 	@ApiOperation("Play the game")
-	public void play(@RequestBody Player player) {
-		gameService.play(player);
+	public  ResponseEntity<String> play(@RequestBody Player player) {
+		return gameService.play(player);
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
