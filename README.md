@@ -20,7 +20,7 @@ java -jar gameofthree-0.0.1-SNAPSHOT.jar
 ```shellscript
 java -jar gameofthree-0.0.1-SNAPSHOT.jar --spring.config.name=application_s2
 ```
-> Ps: The first command is for service one and the second is for service two
+> Ps: The first command is for the service one and the second one is for the service two
 
 After this go to URL Address or you can use any API Development Environment such as Postman and start the game:
 
